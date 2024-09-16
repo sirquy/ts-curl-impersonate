@@ -16,21 +16,11 @@ npm i node-curl-impersonate
 
 ```ts
 // normal request
-const response = await new RequestBuilder()
-    .url(/** YOUR URL HERE **/)
-    .header("x-foo-bar", "baz")
-    .send();
+const response = await new RequestBuilder().url(/** YOUR URL HERE **/).header("x-foo-bar", "baz").send();
 
 // make a post request
-const response = await new RequestBuilder()
-    .url(/** YOUR URL HERE **/)
-    .method("POST")
-    .body({ foo: "bar" })
-    .send();
+const response = await new RequestBuilder().url(/** YOUR URL HERE **/).method("POST").body({ foo: "bar" }).send();
 
 // use a browser preset (options vary by platform)
-const response = await new RequestBuilder()
-    .url(/** YOUR URL HERE **/)
-    .preset({ name: "chrome", version: "110" })
-    .send();
+const response = await new RequestBuilder().url(/** YOUR URL HERE **/).preset({ name: "chrome", version: "110" }).send();
 ```
