@@ -43,5 +43,8 @@
     "files": [
         "dist",
         "bin"
-    ]
+    ],
+    "publishConfig": {
+      "registry": "https://registry.npmjs.org/" 
+    }
 }
