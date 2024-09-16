@@ -2,8 +2,9 @@ name: pr checks
 
 on:
     pull_request:
+        types: [opened, reopened, edited]
         branches:
-            - main
+            - master
 
 jobs:
     test:
@@ -15,7 +16,7 @@ jobs:
                   node-version: 20.11.0
             - run: yarn install --frozen-lockfile
             - run: yarn test
-    lint:
+    neat:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
@@ -24,3 +25,4 @@ jobs:
                   node-version: 20.11.0
             - run: yarn install --frozen-lockfile
             - run: yarn lint
+            - run: yarn pretty:check
