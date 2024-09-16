@@ -13,7 +13,7 @@ export interface RequestPreset<T extends BrowserType> {
  */
 export interface CurlOutput {
     /**
-     * Output the certificate chain with details. 
+     * Output the certificate chain with details.
      * Supported only by the OpenSSL, GnuTLS, Schannel and Secure Transport backends. (Added in 7.88.0)
      */
     certs: string;
@@ -34,7 +34,7 @@ export interface CurlOutput {
     exitcode: number;
 
     /**
-     * The ultimate filename that curl writes out to. 
+     * The ultimate filename that curl writes out to.
      * This is only meaningful if curl is told to write to a file with the -O, --remote-name or -o, --output option. It is most useful in combination with the -J, --remote-header-name option.
      */
     filename_effective: string | null;
@@ -180,13 +180,13 @@ export interface CurlOutput {
     time_namelookup: number;
 
     /**
-     * The time, in seconds, it took from the start until the file transfer was just about to begin. 
+     * The time, in seconds, it took from the start until the file transfer was just about to begin.
      * This includes all pre-transfer commands and negotiations that are specific to the particular protocol(s) involved.
      */
     time_pretransfer: number;
 
     /**
-     * The time, in seconds, it took for all redirection steps including name lookup, connect, pretransfer and transfer before the final transaction was started. 
+     * The time, in seconds, it took for all redirection steps including name lookup, connect, pretransfer and transfer before the final transaction was started.
      * "time_redirect" shows the complete execution time for multiple redirections.
      */
     time_redirect: number;
@@ -429,16 +429,7 @@ export class RequestBuilder {
         const headers = this.buildHeaderFlags({ ...this._headers, ...preset.headers });
         const flags = this.buildFlags(this._flags);
 
-        const command = [
-            path.join(BINARY_PATH, browser.binary),
-            ...flags,
-            ...preset.flags,
-            ...headers,
-            "-s",
-            `-w "\\n%{json}"`,
-            `-X ${this._method}`,
-            `"${this._url}"`,
-        ].join(" ");
+        const command = [path.join(BINARY_PATH, browser.binary), ...flags, ...preset.flags, ...headers, "-s", '-w "\\n%{json}"', `-X ${this._method}`, `"${this._url}"`].join(" ");
 
         return new Promise((resolve, reject) => {
             exec(command, { cwd: BINARY_PATH }, (err, stdout, stderr) => {
@@ -455,7 +446,7 @@ export class RequestBuilder {
                 const details: CurlOutput = JSON.parse(result.at(-1) ?? "{}");
                 resolve({ response, details, stderr: undefined });
             });
-        })
+        });
     }
 
     private buildFlags(flags: string[]) {
@@ -465,7 +456,7 @@ export class RequestBuilder {
             "-v", // TODO: potentially add a way to parse stdout with flag included
             "-X"
         ];
-        return flags.filter(flag => !flagBlacklist.includes(flag));
+        return flags.filter((flag) => !flagBlacklist.includes(flag));
     }
 
     private buildHeaderFlags(headers: Record<string, string>) {
