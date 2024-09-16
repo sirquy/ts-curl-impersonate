@@ -1,7 +1,7 @@
 {
-    "name": "node-curl-impersonate",
+    "name": "ts-curl-impersonate",
     "version": "1.0.0",
-    "description": "A wrapper around cURL-impersonate, a binary which can be used to bypass TLS fingerprinting.",
+    "description": "A typescript wrapper around cURL-impersonate.",
     "main": "dist/index.js",
     "scripts": {
         "build": "tsc",
