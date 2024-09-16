@@ -390,6 +390,11 @@ export class RequestBuilder {
         return this;
     }
 
+    body(body: object) {
+        this.flag("-d", JSON.stringify(body));
+        return this;
+    }
+
     /**
      * Add multiple flags to the request
      * @param flags A record of flags to add to the request

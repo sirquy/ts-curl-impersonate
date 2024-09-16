@@ -22,7 +22,7 @@ test("Returns a successful POST reponse", async () => {
         .url("https://httpbin.org/post")
         .method("POST")
         .header("user-agent", "node-curl-impersonate Test Suit")
-        .flag("-d", JSON.stringify(body))
+        .body(body)
         .send();
 
     expect(response.stderr).toBeUndefined();
