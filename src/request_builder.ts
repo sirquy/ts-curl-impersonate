@@ -429,7 +429,7 @@ export class RequestBuilder {
         const headers = this.buildHeaderFlags({ ...this._headers, ...preset.headers });
         const flags = this.buildFlags(this._flags);
 
-        const command = [path.join(BINARY_PATH, browser.binary), ...flags, ...preset.flags, ...headers, "-s", '-w "\\n%{json}"', `-X ${this._method}`, `"${this._url}"`].join(" ");
+        const command = [path.join(BINARY_PATH, browser.binary), ...flags, ...preset.flags, ...headers, "-s", `-w "\\n%{json}"`, `-X ${this._method}`, `"${this._url}"`].join(" ");
 
         return new Promise((resolve, reject) => {
             exec(command, { cwd: BINARY_PATH }, (err, stdout, stderr) => {
