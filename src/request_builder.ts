@@ -1,5 +1,5 @@
-import { exec } from "child_process";
-import path from "path";
+import { exec } from "node:child_process";
+import path from "node:path";
 import { BINARY_PATH, Browser, BrowserType, getDefaultPlatformBrowser, resolveBrowser } from "./browsers";
 import { BrowserPresets, Preset, PresetMap } from "./presets";
 
