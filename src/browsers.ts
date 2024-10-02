@@ -21,6 +21,11 @@ export const BROWSERS: Record<string, Browser[] | undefined> = {
             name: "safari",
             arch: "x64",
             binary: "chrome-x64.exe"
+        },
+        {
+            name: "firefox",
+            arch: "x64",
+            binary: "chrome-x64.exe"
         }
     ],
     darwin: [
@@ -36,6 +41,16 @@ export const BROWSERS: Record<string, Browser[] | undefined> = {
         },
         {
             name: "chrome",
+            arch: "arm64",
+            binary: "chrome-arm64"
+        },
+        {
+            name: "safari",
+            arch: "x64",
+            binary: "chrome-x64"
+        },
+        {
+            name: "safari",
             arch: "arm64",
             binary: "chrome-arm64"
         }
@@ -58,6 +73,16 @@ export const BROWSERS: Record<string, Browser[] | undefined> = {
         },
         {
             name: "chrome",
+            arch: "arm64",
+            binary: "chrome-arm64"
+        },
+        {
+            name: "safari",
+            arch: "x64",
+            binary: "chrome-x64"
+        },
+        {
+            name: "safari",
             arch: "arm64",
             binary: "chrome-arm64"
         }
