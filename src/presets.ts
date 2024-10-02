@@ -92,7 +92,7 @@ export const ChromePresets: Record<ChromePresetVersion, Preset> = {
     }
 };
 
-export type FirefoxPresetVersion = "109" | "117";
+export type FirefoxPresetVersion = "109" | "117" | "120";
 
 export const FirefoxPresets: Record<FirefoxPresetVersion, Preset> = {
     "109": {
@@ -128,10 +128,33 @@ export const FirefoxPresets: Record<FirefoxPresetVersion, Preset> = {
             "--http2",
             "--compressed"
         ]
+    },
+    "120": {
+        headers: {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/120.0",
+            Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.5",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Upgrade-Insecure-Requests": "1",
+            "Sec-Fetch-Dest": "document",
+            "Sec-Fetch-Mode": "navigate",
+            "Sec-Fetch-Site": "none",
+            "Sec-Fetch-User": "?1",
+            TE: "Trailers"
+        },
+        flags: [
+            "--ciphers TLS_AES_128_GCM_SHA256,TLS_CHACHA20_POLY1305_SHA256,TLS_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,TLS_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA",
+            "--http2",
+            "--http2-settings '3:0:0:201,5:0:0:101,7:0:0:1,9:0:7:1,11:0:3:1,13:0:0:241'",
+            "--http2-window-update 12517377",
+            "--http2-pseudo-headers-order 'mpas'",
+            "--compressed",
+            "--ech GREASE"
+        ]
     }
 };
 
-export type SafariPresetVersion = "15.5";
+export type SafariPresetVersion = "15.5" | "18.0";
 
 export const SafariPresets: Record<SafariPresetVersion, Preset> = {
     "15.5": {
@@ -153,6 +176,34 @@ export const SafariPresets: Record<SafariPresetVersion, Preset> = {
             "--cert-compression zlib",
             "--http2-pseudo-headers-order mspa",
             "--location"
+        ]
+    },
+    "18.0": {
+        headers: {
+            "sec-fetch-dest": "document",
+            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15",
+            accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "sec-fetch-site": "none",
+            "sec-fetch-mode": "navigate",
+            priority: "u=0, i",
+            "accept-language": "en-US,en;q=0.9",
+            "accept-encoding": "gzip, deflate, br"
+        },
+        flags: [
+            "--ciphers TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256:TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256:TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA:TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA:TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA:TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA:TLS_RSA_WITH_AES_256_GCM_SHA384:TLS_RSA_WITH_AES_128_GCM_SHA256:TLS_RSA_WITH_AES_256_CBC_SHA:TLS_RSA_WITH_AES_128_CBC_SHA:TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA:TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA:TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+            "--curves X25519:P-256:P-384:P-521",
+            "--signature-hashes ecdsa_secp256r1_sha256,rsa_pss_rsae_sha256,rsa_pkcs1_sha256,ecdsa_secp384r1_sha384,rsa_pss_rsae_sha384,rsa_pss_rsae_sha384,rsa_pkcs1_sha384,rsa_pss_rsae_sha512,rsa_pkcs1_sha512,rsa_pkcs1_sha1",
+            "--http2",
+            "--http2-settings '2:0;3:100;4:2097152;8:1;9:1'",
+            "--http2-pseudo-headers-order msap",
+            "--http2-window-update 10420225 ",
+            "--http2-stream-weight 256",
+            "--http2-stream-exclusive 0",
+            "--compressed",
+            "--tlsv1.0",
+            "--no-tls-session-ticket",
+            "--cert-compression zlib",
+            "--tls-grease"
         ]
     }
 };
