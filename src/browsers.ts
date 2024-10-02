@@ -27,19 +27,24 @@ export const BROWSERS: Record<string, Browser[] | undefined> = {
         {
             name: "firefox",
             arch: "x64",
-            binary: "firefox-x64"
+            binary: "chrome-x64"
         },
         {
             name: "chrome",
             arch: "x64",
             binary: "chrome-x64"
+        },
+        {
+            name: "chrome",
+            arch: "arm64",
+            binary: "chrome-arm64"
         }
     ],
     linux: [
         {
             name: "firefox",
             arch: "x64",
-            binary: "firefox-x64"
+            binary: "chrome-x64"
         },
         {
             name: "chrome",
@@ -49,7 +54,7 @@ export const BROWSERS: Record<string, Browser[] | undefined> = {
         {
             name: "firefox",
             arch: "arm64",
-            binary: "firefox-arm64"
+            binary: "chrome-arm64"
         },
         {
             name: "chrome",

@@ -1,5 +1,5 @@
 {
-    "name": "ts-curl-impersonate",
+    "name": "@pricething/curl",
     "version": "1.0.1",
     "description": "A typescript wrapper around cURL-impersonate.",
     "main": "dist/index.js",
@@ -21,7 +21,7 @@
         "curl-impersonate",
         "typescript"
     ],
-    "author": "battlesquid",
+    "author": "datagutt",
     "license": "MIT",
     "devDependencies": {
         "@eslint/js": "^9.10.0",
