@@ -97,7 +97,7 @@ export const ChromePresets: Record<ChromePresetVersion, Preset> = {
     },
     "124": {
         headers: {
-            "sec-ch-ua": `"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"`,
+            "sec-ch-ua": `\\"Chromium\\";v=\\"124\\", \\"Google Chrome\\";v=\\"124\\", \\"Not-A.Brand\\";v=\\"99\\"`,
             "sec-ch-ua-mobile": "?0",
             "sec-ch-ua-platform": "macOS",
             "Upgrade-Insecure-Requests": "1",
