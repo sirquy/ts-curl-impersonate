@@ -1,6 +1,6 @@
 {
     "name": "@pricething/curl",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "A typescript wrapper around cURL-impersonate.",
     "main": "dist/index.js",
     "scripts": {
