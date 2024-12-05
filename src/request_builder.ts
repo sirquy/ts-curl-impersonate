@@ -391,7 +391,7 @@ export class RequestBuilder {
     }
 
     body(body: object) {
-        this.flag("-d", JSON.stringify(body));
+        this.flag("-d", `'${JSON.stringify(body)}'`);
         return this;
     }
 
